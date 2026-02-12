@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stareon Community 7.0</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- GALAXY BACKGROUND -->
+<div class="galaxy">
+  <div class="nebula"></div>
+  <div class="planet"></div>
+
+  <div class="shooting-star" style="top:10%; left:-200px;"></div>
+  <div class="shooting-star" style="top:40%; left:-300px; animation-delay:2s;"></div>
+  <div class="shooting-star" style="top:70%; left:-250px; animation-delay:4s;"></div>
+</div>
+
+<div class="container">
+
+  <h1 class="main-title">🌍 STAREON COMMUNITY 7.0</h1>
+
+  <!-- LOGIN ADMIN -->
+  <div class="card">
+    <h2>🔐 Login Admin</h2>
+    <input type="password" id="adminPass" placeholder="Password Admin">
+    <button class="btn" onclick="loginAdmin()">Login</button>
+    <p id="adminStatus">Status: User</p>
+  </div>
+
+  <!-- PROFIL -->
+  <div class="card">
+    <h2>👤 Profil</h2>
+    <input type="text" id="username" placeholder="Nama Kamu">
+    <select id="role">
+      <option>Citizen</option>
+      <option>Worker</option>
+      <option>Roleplay</option>
+    </select>
+    <div class="btn-group">
+      <button class="btn" onclick="updateProfile()">Update Profil</button>
+      <button class="btn" onclick="cekProfil()">Cek Profil</button>
+    </div>
+
+    <p>Nama: <span id="profileName">-</span></p>
+    <p>Role: <span id="profileRole">-</span></p>
+    <p>Status: <span id="profileStatus">Warga Negara</span></p>
+  </div>
+
+  <!-- PEMILU -->
+  <div class="card">
+    <h2>🗳 Pemilu Presiden</h2>
+    <input type="text" id="candidateName" placeholder="Nama Calon">
+    <button class="btn" onclick="daftarCalon()">Daftar Calon</button>
+
+    <ul id="candidateList" class="candidate-list"></ul>
+
+    <p>Status Pemilu: <span id="electionStatus">Belum diset</span></p>
+  </div>
+
+  <!-- PRESIDEN -->
+  <div class="card">
+    <h2>👑 Presiden Aktif</h2>
+    <p id="presidentName">Belum ada</p>
+    <p>Masa Jabatan: <span id="termCountdown">-</span></p>
+  </div>
+
+  <!-- STATISTIK -->
+  <div class="card">
+    <h2>📊 Statistik</h2>
+    <p>Total Calon: <span id="statTotalCalon">0</span></p>
+    <p>Total Suara: <span id="statTotalSuara">0</span></p>
+    <p>Pemimpin Sementara: <span id="statLeader">-</span></p>
+  </div>
+
+  <!-- PERUSAHAAN -->
+  <div class="card">
+    <h2>🏢 Sistem Perusahaan</h2>
+
+    <input type="text" id="companyName" placeholder="Nama Perusahaan">
+    <input type="text" id="companyType" placeholder="Jenis Usaha">
+    <button class="btn" onclick="createCompany()">Buat Perusahaan</button>
+
+    <ul id="companyList" class="company-list"></ul>
+
+    <p>Total Perusahaan: <span id="totalCompany">0</span></p>
+  </div>
+
+  <!-- ADMIN PANEL -->
+  <div class="card" id="adminPanel" style="display:none;">
+    <h2>⚙ Admin Panel</h2>
+
+    <label>Mulai Pemilu:</label>
+    <input type="datetime-local" id="startTime">
+
+    <label>Selesai Pemilu:</label>
+    <input type="datetime-local" id="endTime">
+
+    <button class="btn" onclick="setElectionTime()">Set Waktu Pemilu</button>
+
+    <label>Masa Jabatan (menit):</label>
+    <input type="number" id="termMinutes">
+
+    <button class="btn" onclick="setTerm()">Set Masa Jabatan</button>
+
+    <button class="btn btn-red" onclick="resetSystem()">Reset Sistem</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
